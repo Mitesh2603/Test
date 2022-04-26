@@ -1,23 +1,23 @@
 "use strict";
-/*
-// TEST 1
-// const a = [2,1,2,3,3,4];
-// const b = [1,2,2,1];
-// const c = [2,2,3,3,2,2];
 
-// function array (arr){
-//     let middleIndex = Math.ceil(arr.length / 2);
-//     let firstHalf = arr.splice(0, middleIndex);
-//     let secondHalf = arr.splice(-middleIndex);
-// }
+TEST 1
+const a = [2,1,2,3,3,4];
+const b = [1,2,2,1];
+const c = [2,2,3,3,2,2];
 
-// let newArray = a.sort((arr) => 0.5 - Math.random());
-// newArray = b.sort((arr) => 0.5 - Math.random());
-// newArray = c.sort((arr) => 0.5 - Math.random());
+function array (arr){
+    let middleIndex = Math.ceil(arr.length / 2);
+    let firstHalf = arr.splice(0, middleIndex);
+    let secondHalf = arr.splice(-middleIndex);
+}
 
-// console.log(a,a.slice(3));
-// console.log(b,b.slice(2));
-// console.log(c,c.slice(3));
+let newArray = a.sort((arr) => 0.5 - Math.random());
+newArray = b.sort((arr) => 0.5 - Math.random());
+newArray = c.sort((arr) => 0.5 - Math.random());
+
+console.log(a,a.slice(3));
+console.log(b,b.slice(2));
+console.log(c,c.slice(3));
 
 // TEST 1
 function divideArray(arr, n) {
@@ -194,68 +194,8 @@ function mergeStrings(s1, s2) {
 var S1 = "super";
 var S2 = "tower";
 mergeStrings(S1, S2);
-*/
 
 // TEST 6
-
-// let map = [
-//   [0, 2, 0, 1, 3, 2],
-//   [2, 1, 4, 5, 0, 0],
-//   [3, 1, 3, 1, 1, 2],
-//   [1, 0, 1, 0, 2, 1],
-//   [1, 4, 1, 2, 1, 1],
-//   [4, 0, 5, 3, 4, 4],
-// ];
-
-// function findTheWay() {
-//   for (let i = 0; i < map.length; i++) {
-//     for (let j = 0; j < map.length; j++) {
-//       // First row of matrix and first column of matrix
-//       if (map[i][0] && map[j][0] === 0) {
-//         map[i] += 1;
-//         console.log("inc i");
-//       } else if (map[i][0] && map[j][0] === 2) {
-//         map[j] += 1;
-//         console.log("inc j");
-//       }
-
-//       // First row of matrix and second column of matrix
-//       if (map[i][1] && map[j][0] === 0) {
-//         map[i] += 1;
-//         console.log("inc i");
-//       } else if (map[i][1] && map[j][0] === 2) {
-//         map[j] += 1;
-//         console.log("inc j");
-//       }
-
-//       // second row of matrix and second column of matrix
-//       if (map[i][1] && map[j][1] === 1) {
-//         map[j] += 1;
-//         console.log("inc j");
-//       } else if (map[i][1] && map[j][1] === 4) {
-//         map[i] += 1;
-//         console.log("inc i");
-//       } else if (map[i][1] && map[j][1] === 5) {
-//         map[i] -= 1;
-//         console.log("inc j");
-//       }
-
-//       // Third row of matrix and second column of matrix
-//       if (map[i][1] && map[j][2] === 1) {
-//         console.log("There is no path connected");
-//         return false;
-//       } else if (map[i][1] && map[j][2] === 4) {
-//         map[i] += 1;
-//         console.log("inc i");
-//       } else if (map[i][1] && map[j][2] === 5) {
-//         map[i] -= 1;
-//         return true;
-//       }
-//     }
-//   }
-// }
-// console.log(findTheWay(map));
-
 // top left to bottom right
 let findTheWay = function (matrix) {
   // Directions
