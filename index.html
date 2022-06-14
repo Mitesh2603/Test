@@ -1,14 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-<script src = "test.js"></script>
-</script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+  </head>
+  <style>
+    table {
+      padding: 2px;
+      border: 1px solid;
+      width: 400px;
+      align-items: center;
+    }
+  </style>
+  <table>
+    <tr>
+      <th align="center">Name</th>
+      <th align="center">Age</th>
+      <th align="center">Class</th>
+      <th align="center">Marks</th>
+      <th align="center">Attendance</th>
+    </tr>
+    <tbody id="tableData"></tbody>
+  </table>
+  <body></body>
+
+  <script>
+    let students = [
+      { name: "Mitesh", age: 20, class: "A", marks: 80, attendance: 75 },
+      { name: "Vrushabh", age: 22, class: "B", marks: 60, attendance: 50 },
+      { name: "Mansi", age: 19, class: "A", marks: 50, attendance: 85 },
+      { name: "Sanjana", age: 20, class: "B", marks: 10, attendance: 80 },
+    ];
+
+    // Sort Table Marks Array Class Wise
+    students.sort(function (a, b) {
+      if (a.class < b.class) return -1;
+      if (a.class > b.class) return 1;
+      if (a.marks > b.marks) return -1;
+      if (a.marks < b.marks) return 1;
+      return 0;
+    });
+    // console.log(students);
+
+    // Min Max Class Wise
+    let sort1 = [];
+    let sort2 = [];
+    let attendence2 = [];
+    let attendence4 = [];
+    students.forEach((e) => {
+      if (e.class === "A") {
+        let marks1 = e.marks;
+        let attendence1 = e.attendance;
+        sort1.push(marks1);
+        attendence2.push(attendence1);
+      } else if (e.class === "B") {
+        let marks1 = e.marks;
+        let attendence2 = e.attendance;
+        sort2.push(marks1);
+        attendence4.push(attendence2);
+      }
+    });
+
+    let m3 = Math.max(...sort1);
+    let m4 = Math.min(...sort1);
+    let at3 = Math.max(...attendence2);
+    let at5 = Math.min(...attendence2);
+
+    let c1 = Math.max(...sort2);
+    let c2 = Math.min(...sort2);
+    let c3 = Math.max(...attendence4);
+    let c4 = Math.min(...attendence4);
+
+    console.log("Maximum Marks 0f A :" + m3);
+    console.log("Minimum Marks 0f A:" + m4);
+    console.log("Maximum Attendence 0f A :" + at3);
+    console.log("Minimum Attendence 0f A:" + at5);
+
+    console.log("Maximum Marks 0f B :" + c1);
+    console.log("Minimum Marks 0f B:" + c2);
+    console.log("Maximum Attendence 0f B :" + c3);
+    console.log("Minimum Attendence 0f B:" + c4);
+
+    // Print Table
+    var table = "<tbody>";
+    for (i = 0; i < students.length; i++) {
+      table += "<tr>";
+      table += "<td>" + students[i].name + "</td>";
+      table += "<td>" + students[i].age + "</td>";
+      table += "<td>" + students[i].class + "</td>";
+      table += "<td>" + students[i].marks + "</td>";
+      table += "<td>" + students[i].attendance + "</td>";
+      table += "</tr>";
+    }
+    table += "</tbody>";
+    document.getElementById("tableData").innerHTML = table;
+    // console.table(students);
+  </script>
 </html>
