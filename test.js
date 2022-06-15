@@ -1,23 +1,23 @@
 "use strict";
+/*
+// TEST 1
+const a = [2, 1, 2, 3, 3, 4];
+const b = [1, 2, 2, 1];
+const c = [2, 2, 3, 3, 2, 2];
 
-TEST 1
-const a = [2,1,2,3,3,4];
-const b = [1,2,2,1];
-const c = [2,2,3,3,2,2];
-
-function array (arr){
-    let middleIndex = Math.ceil(arr.length / 2);
-    let firstHalf = arr.splice(0, middleIndex);
-    let secondHalf = arr.splice(-middleIndex);
+function array(arr) {
+  let middleIndex = Math.ceil(arr.length / 2);
+  let firstHalf = arr.splice(0, middleIndex);
+  let secondHalf = arr.splice(-middleIndex);
 }
 
 let newArray = a.sort((arr) => 0.5 - Math.random());
 newArray = b.sort((arr) => 0.5 - Math.random());
 newArray = c.sort((arr) => 0.5 - Math.random());
 
-console.log(a,a.slice(3));
-console.log(b,b.slice(2));
-console.log(c,c.slice(3));
+console.log(a, a.slice(3));
+console.log(b, b.slice(2));
+console.log(c, c.slice(3));
 
 // TEST 1
 function divideArray(arr, n) {
@@ -196,6 +196,7 @@ var S2 = "tower";
 mergeStrings(S1, S2);
 
 // TEST 6
+
 // top left to bottom right
 let findTheWay = function (matrix) {
   // Directions
@@ -277,3 +278,6 @@ let matrix = [
   [4, 0, 5, 3, 4, 4],
 ];
 console.log(findTheWay(matrix));
+*/
+
+// TEST 7
