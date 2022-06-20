@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test</title>
+  </head>
+
+  <body></body>
+
+  <script>
+    let students = [
+      { name: "Mitesh", age: 20, class: "A", marks: 80, attendance: 75 },
+      { name: "Vrushabh", age: 22, class: "B", marks: 60, attendance: 50 },
+      { name: "Mansi", age: 19, class: "A", marks: 50, attendance: 85 },
+      { name: "Sanjana", age: 20, class: "B", marks: 10, attendance: 80 },
+    ];
+
+    const groupByCategory = students.groupBy((product) => {
+      return product.class;
+    });
+
+    console.table(groupByCategory);
+  </script>
+</html>

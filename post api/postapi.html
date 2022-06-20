@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POST API</title>
+  </head>
+  <style>
+    body {
+      padding: 10px 5px;
+    }
+    input {
+      padding: 5px 10px;
+      margin: auto;
+      font-size: 15px;
+      border: 1px solid;
+      border-radius: 3%;
+    }
+    label {
+      padding: 10px 5px;
+    }
+  </style>
+  <body>
+    <label> Name : </label
+    ><input
+      type="text"
+      id="name"
+      class="name"
+      placeholder="Name"
+      required
+    /><br /><br />
+
+    <label> Job : </label
+    ><input
+      type="text"
+      id="job"
+      class="job"
+      placeholder="Job"
+      required
+    /><br /><br />
+
+    <button id="btn" class="submit" onclick="myFunc()">Submit</button>
+    <br />
+    <br />
+    <table id="table" border="1px solid">
+      <thead>
+        <tr>
+          <td>Name</td>
+          <td>Job</td>
+          <td>Update</td>
+        </tr>
+      </thead>
+      <tbody id="tb"></tbody>
+    </table>
+  </body>
+  <script src="postapi.js"></script>
+  <script></script>
+</html>

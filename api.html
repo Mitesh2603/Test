@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // function getData() {
+    //   url = "https://reqres.in/api/users?page=2";
+    //   fetch(url)
+    //     .then((response) => {
+    //       return response.json();
+    //     })
+    //     .then((data) => {
+    //       console.log(data);
+    //     });
+    // }
+
+    // getData();
+
+    // function postData() {
+    //   url = "https://reqres.in/api/users";
+    //   data = `{"id":3,"email":"emma.wong@reqres.in","first_name":"Emma","last_name":"Wong","avatar":"https://reqres.in/img/faces/3-image.jpg"}`;
+    //   params = {
+    //     method: "post",
+    //     headers: { "content-type": "application/json" },
+    //     body: data,
+    //   };
+    //   fetch(url, params)
+    //     .then((response) => response.json())
+    //     .then((data) => console.log(data));
+    // }
+    // postData();
+
+    fetch("https://reqres.in/api/users?page=2")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => console.log(data));
+  </script>
+</html>
