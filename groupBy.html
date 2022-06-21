@@ -10,6 +10,21 @@
   <body></body>
 
   <script>
+    function groupBy(list, keyGetter) {
+      // debugger;
+      const map = new Map();
+      list.forEach((item) => {
+        const key = keyGetter(item);
+        const collection = map.get(key);
+        if (!collection) {
+          map.set(key, [item]);
+        } else {
+          collection.push(item);
+        }
+      });
+      return map;
+    }
+
     let students = [
       { name: "Mitesh", age: 20, class: "A", marks: 80, attendance: 75 },
       { name: "Vrushabh", age: 22, class: "B", marks: 60, attendance: 50 },
@@ -17,10 +32,11 @@
       { name: "Sanjana", age: 20, class: "B", marks: 10, attendance: 80 },
     ];
 
-    const groupByCategory = students.groupBy((product) => {
-      return product.class;
-    });
+    const grouped = groupBy(students, (std) => std.class);
 
-    console.table(groupByCategory);
+    console.log(grouped.get("A"));
+    console.log(grouped.get("B"));
+
+    // console.table(groupByCategory);
   </script>
 </html>

@@ -20,20 +20,33 @@ window.onload = () => {
     tbody.appendChild(tr);
   });
 };
-
+let id = "";
 let select = null;
 let myFunc = () => {
   if (select == null) {
     data();
   } else {
     update();
+    // edit();
     select = null;
+    // let std = getCrudData();
+    // std[id] = name;
+    // std[id] = job;
+    // setCrudData(std);
   }
 };
 
 let data = () => {
   let name = document.getElementById("name").value;
   let job = document.getElementById("job").value;
+  if (name === "") {
+    alert("Name must required");
+    return false;
+  } else if (job === "") {
+    alert("Job must required");
+    return false;
+  }
+
   let table = document.getElementById("table");
   document.getElementById("table").style.display = "block";
 
@@ -41,19 +54,13 @@ let data = () => {
   let nm = row.insertCell(0);
   let jb = row.insertCell(1);
   let up = row.insertCell(2);
+  let dl = row.insertCell(3);
   nm.innerHTML = document.getElementById("name").value;
   jb.innerHTML = document.getElementById("job").value;
   up.innerHTML = `<a class="edt" id="edt" onclick="edit(this)">Edit</a>`;
+  dl.innerHTML = `<a class="dlt" id="dlt" onclick="delet(this)">Delete</a>`;
 
-  if (name === "" && job === "") {
-    alert("Name and Job must required");
-    return false;
-  }
-  if (!isNaN(name) && !isNaN(job)) {
-    alert("Number not allowed");
-    return false;
-  }
-  fetch("https://reqres.in/api/users", {
+  fetch("https://reqres.in/api/users/2", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -79,12 +86,22 @@ let data = () => {
       });
       localStorage.setItem("users", JSON.stringify(store));
     });
-  document.getElementById("name").value = "";
-  document.getElementById("job").value = "";
+  clearInput();
   edit();
 };
 
+let delet = (rid) => {
+  let std = getCrudData();
+  std.splice(rid, 1);
+  setCrudData(std);
+};
+
 let edit = (x) => {
+  // id = x;
+  // let std = getCrudData();
+  // document.getElementById("name").value = std[x];
+  // document.getElementById("job").value = std[x];
+
   select = x.parentElement.parentElement;
   document.getElementById("name").value = select.cells[0].innerHTML;
   document.getElementById("job").value = select.cells[1].innerHTML;
@@ -92,4 +109,18 @@ let edit = (x) => {
 let update = () => {
   select.cells[0].innerHTML = document.getElementById("name").value;
   select.cells[1].innerHTML = document.getElementById("job").value;
+};
+
+let clearInput = () => {
+  document.getElementById("name").value = "";
+  document.getElementById("job").value = "";
+};
+
+let getCrudData = () => {
+  let store = JSON.parse(localStorage.getItem("users"));
+  return store;
+};
+
+let setCrudData = (arr) => {
+  localStorage.setItem("users", JSON.stringify(arr));
 };
